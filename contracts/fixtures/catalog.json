@@ -1,0 +1,382 @@
+{
+  "categories": [
+    {
+      "id": "home",
+      "name": "Home"
+    },
+    {
+      "id": "office",
+      "name": "Office"
+    },
+    {
+      "id": "outdoor",
+      "name": "Outdoor"
+    },
+    {
+      "id": "kitchen",
+      "name": "Kitchen"
+    }
+  ],
+  "items": [
+    {
+      "id": "item-001",
+      "name": "Classic lamp",
+      "category": "home",
+      "status": "published",
+      "description": "A synthetic lamp used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "classic"],
+      "createdAt": "2026-01-02T00:00:00.000Z",
+      "updatedAt": "2026-01-02T01:00:00.000Z"
+    },
+    {
+      "id": "item-002",
+      "name": "Compact cushion",
+      "category": "home",
+      "status": "archived",
+      "description": "A synthetic cushion used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "compact"],
+      "createdAt": "2026-01-03T00:00:00.000Z",
+      "updatedAt": "2026-01-03T02:00:00.000Z"
+    },
+    {
+      "id": "item-003",
+      "name": "Linen rug",
+      "category": "home",
+      "status": "published",
+      "description": "A synthetic rug used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "linen"],
+      "createdAt": "2026-01-04T00:00:00.000Z",
+      "updatedAt": "2026-01-04T03:00:00.000Z"
+    },
+    {
+      "id": "item-004",
+      "name": "Oak shelf",
+      "category": "home",
+      "status": "draft",
+      "description": "A synthetic shelf used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "oak"],
+      "createdAt": "2026-01-05T00:00:00.000Z",
+      "updatedAt": "2026-01-05T04:00:00.000Z"
+    },
+    {
+      "id": "item-005",
+      "name": "Steel clock",
+      "category": "home",
+      "status": "published",
+      "description": "A synthetic clock used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "steel"],
+      "createdAt": "2026-01-06T00:00:00.000Z",
+      "updatedAt": "2026-01-06T05:00:00.000Z"
+    },
+    {
+      "id": "item-006",
+      "name": "Ceramic vase",
+      "category": "home",
+      "status": "published",
+      "description": "A synthetic vase used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "ceramic"],
+      "createdAt": "2026-01-07T00:00:00.000Z",
+      "updatedAt": "2026-01-07T06:00:00.000Z"
+    },
+    {
+      "id": "item-007",
+      "name": "Bamboo blanket",
+      "category": "home",
+      "status": "archived",
+      "description": "A synthetic blanket used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "bamboo"],
+      "createdAt": "2026-01-08T00:00:00.000Z",
+      "updatedAt": "2026-01-08T07:00:00.000Z"
+    },
+    {
+      "id": "item-008",
+      "name": "Canvas mirror",
+      "category": "home",
+      "status": "published",
+      "description": "A synthetic mirror used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "canvas"],
+      "createdAt": "2026-01-09T00:00:00.000Z",
+      "updatedAt": "2026-01-09T08:00:00.000Z"
+    },
+    {
+      "id": "item-009",
+      "name": "Wool frame",
+      "category": "home",
+      "status": "draft",
+      "description": "A synthetic frame used to demonstrate the catalog. Not a real product.",
+      "tags": ["home", "wool"],
+      "createdAt": "2026-01-10T00:00:00.000Z",
+      "updatedAt": "2026-01-10T09:00:00.000Z"
+    },
+    {
+      "id": "item-010",
+      "name": "Classic notebook",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic notebook used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "classic"],
+      "createdAt": "2026-01-11T00:00:00.000Z",
+      "updatedAt": "2026-01-11T10:00:00.000Z"
+    },
+    {
+      "id": "item-011",
+      "name": "Compact desk mat",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic desk mat used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "compact"],
+      "createdAt": "2026-01-12T00:00:00.000Z",
+      "updatedAt": "2026-01-12T11:00:00.000Z"
+    },
+    {
+      "id": "item-012",
+      "name": "Linen pen set",
+      "category": "office",
+      "status": "archived",
+      "description": "A synthetic pen set used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "linen"],
+      "createdAt": "2026-01-13T00:00:00.000Z",
+      "updatedAt": "2026-01-13T12:00:00.000Z"
+    },
+    {
+      "id": "item-013",
+      "name": "Oak monitor stand",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic monitor stand used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "oak"],
+      "createdAt": "2026-01-14T00:00:00.000Z",
+      "updatedAt": "2026-01-14T13:00:00.000Z"
+    },
+    {
+      "id": "item-014",
+      "name": "Steel planner",
+      "category": "office",
+      "status": "draft",
+      "description": "A synthetic planner used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "steel"],
+      "createdAt": "2026-01-15T00:00:00.000Z",
+      "updatedAt": "2026-01-15T14:00:00.000Z"
+    },
+    {
+      "id": "item-015",
+      "name": "Ceramic stapler",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic stapler used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "ceramic"],
+      "createdAt": "2026-01-16T00:00:00.000Z",
+      "updatedAt": "2026-01-16T15:00:00.000Z"
+    },
+    {
+      "id": "item-016",
+      "name": "Bamboo folder",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic folder used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "bamboo"],
+      "createdAt": "2026-01-17T00:00:00.000Z",
+      "updatedAt": "2026-01-17T16:00:00.000Z"
+    },
+    {
+      "id": "item-017",
+      "name": "Canvas desk tray",
+      "category": "office",
+      "status": "archived",
+      "description": "A synthetic desk tray used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "canvas"],
+      "createdAt": "2026-01-18T00:00:00.000Z",
+      "updatedAt": "2026-01-18T17:00:00.000Z"
+    },
+    {
+      "id": "item-018",
+      "name": "Wool whiteboard",
+      "category": "office",
+      "status": "published",
+      "description": "A synthetic whiteboard used to demonstrate the catalog. Not a real product.",
+      "tags": ["office", "wool"],
+      "createdAt": "2026-01-19T00:00:00.000Z",
+      "updatedAt": "2026-01-19T18:00:00.000Z"
+    },
+    {
+      "id": "item-019",
+      "name": "Classic tent",
+      "category": "outdoor",
+      "status": "draft",
+      "description": "A synthetic tent used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "classic"],
+      "createdAt": "2026-01-20T00:00:00.000Z",
+      "updatedAt": "2026-01-20T19:00:00.000Z"
+    },
+    {
+      "id": "item-020",
+      "name": "Compact lantern",
+      "category": "outdoor",
+      "status": "published",
+      "description": "A synthetic lantern used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "compact"],
+      "createdAt": "2026-01-21T00:00:00.000Z",
+      "updatedAt": "2026-01-21T20:00:00.000Z"
+    },
+    {
+      "id": "item-021",
+      "name": "Linen water bottle",
+      "category": "outdoor",
+      "status": "published",
+      "description": "A synthetic water bottle used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "linen"],
+      "createdAt": "2026-01-22T00:00:00.000Z",
+      "updatedAt": "2026-01-22T21:00:00.000Z"
+    },
+    {
+      "id": "item-022",
+      "name": "Oak backpack",
+      "category": "outdoor",
+      "status": "archived",
+      "description": "A synthetic backpack used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "oak"],
+      "createdAt": "2026-01-23T00:00:00.000Z",
+      "updatedAt": "2026-01-23T22:00:00.000Z"
+    },
+    {
+      "id": "item-023",
+      "name": "Steel hammock",
+      "category": "outdoor",
+      "status": "published",
+      "description": "A synthetic hammock used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "steel"],
+      "createdAt": "2026-01-24T00:00:00.000Z",
+      "updatedAt": "2026-01-24T23:00:00.000Z"
+    },
+    {
+      "id": "item-024",
+      "name": "Ceramic camp chair",
+      "category": "outdoor",
+      "status": "draft",
+      "description": "A synthetic camp chair used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "ceramic"],
+      "createdAt": "2026-01-25T00:00:00.000Z",
+      "updatedAt": "2026-01-26T00:00:00.000Z"
+    },
+    {
+      "id": "item-025",
+      "name": "Bamboo cooler",
+      "category": "outdoor",
+      "status": "published",
+      "description": "A synthetic cooler used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "bamboo"],
+      "createdAt": "2026-01-26T00:00:00.000Z",
+      "updatedAt": "2026-01-27T01:00:00.000Z"
+    },
+    {
+      "id": "item-026",
+      "name": "Canvas trail map",
+      "category": "outdoor",
+      "status": "published",
+      "description": "A synthetic trail map used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "canvas"],
+      "createdAt": "2026-01-27T00:00:00.000Z",
+      "updatedAt": "2026-01-28T02:00:00.000Z"
+    },
+    {
+      "id": "item-027",
+      "name": "Wool compass",
+      "category": "outdoor",
+      "status": "archived",
+      "description": "A synthetic compass used to demonstrate the catalog. Not a real product.",
+      "tags": ["outdoor", "wool"],
+      "createdAt": "2026-01-28T00:00:00.000Z",
+      "updatedAt": "2026-01-29T03:00:00.000Z"
+    },
+    {
+      "id": "item-028",
+      "name": "Classic mug",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic mug used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "classic"],
+      "createdAt": "2026-01-29T00:00:00.000Z",
+      "updatedAt": "2026-01-30T04:00:00.000Z"
+    },
+    {
+      "id": "item-029",
+      "name": "Compact kettle",
+      "category": "kitchen",
+      "status": "draft",
+      "description": "A synthetic kettle used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "compact"],
+      "createdAt": "2026-01-30T00:00:00.000Z",
+      "updatedAt": "2026-01-31T05:00:00.000Z"
+    },
+    {
+      "id": "item-030",
+      "name": "Linen cutting board",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic cutting board used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "linen"],
+      "createdAt": "2026-01-31T00:00:00.000Z",
+      "updatedAt": "2026-02-01T06:00:00.000Z"
+    },
+    {
+      "id": "item-031",
+      "name": "Oak bowl set",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic bowl set used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "oak"],
+      "createdAt": "2026-02-01T00:00:00.000Z",
+      "updatedAt": "2026-02-02T07:00:00.000Z"
+    },
+    {
+      "id": "item-032",
+      "name": "Steel teapot",
+      "category": "kitchen",
+      "status": "archived",
+      "description": "A synthetic teapot used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "steel"],
+      "createdAt": "2026-02-02T00:00:00.000Z",
+      "updatedAt": "2026-02-03T08:00:00.000Z"
+    },
+    {
+      "id": "item-033",
+      "name": "Ceramic spice rack",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic spice rack used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "ceramic"],
+      "createdAt": "2026-02-03T00:00:00.000Z",
+      "updatedAt": "2026-02-04T09:00:00.000Z"
+    },
+    {
+      "id": "item-034",
+      "name": "Bamboo apron",
+      "category": "kitchen",
+      "status": "draft",
+      "description": "A synthetic apron used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "bamboo"],
+      "createdAt": "2026-02-04T00:00:00.000Z",
+      "updatedAt": "2026-02-05T10:00:00.000Z"
+    },
+    {
+      "id": "item-035",
+      "name": "Canvas timer",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic timer used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "canvas"],
+      "createdAt": "2026-02-05T00:00:00.000Z",
+      "updatedAt": "2026-02-06T11:00:00.000Z"
+    },
+    {
+      "id": "item-036",
+      "name": "Wool colander",
+      "category": "kitchen",
+      "status": "published",
+      "description": "A synthetic colander used to demonstrate the catalog. Not a real product.",
+      "tags": ["kitchen", "wool"],
+      "createdAt": "2026-02-06T00:00:00.000Z",
+      "updatedAt": "2026-02-07T12:00:00.000Z"
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source": "contracts/catalog.openapi.yaml",
+  "sha256": "aae5ff82d36d5aeb9034047ced978f9d8ba4b458b9d716b9dd17fa6c0f97ce34",
+  "infoVersion": "1.0.0",
+  "generator": "openapi-typescript@7.13.0",
+  "options": {
+    "alphabetize": true
+  }
+}
