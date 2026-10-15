@@ -46,13 +46,41 @@ A lição não é "nunca monorepo". É que **a fronteira precisa de uma regra e 
   nele. pnpm (`pnpm-workspace.yaml`, protocolo `workspace:`) continua uma alternativa válida: é mais estrito com
   dependências fantasmas. Ver <https://pnpm.io/workspaces/>.
 
+## A hipótese do frontend separado
+
+No cenário comparado, o backend e seus contratos já existem, e o app mobile já vive em repositório próprio. Nesse
+contexto, um repositório web separado (M3) tende a encaixar melhor:
+
+- **Ciclos independentes:** web, mobile e backend publicam no seu próprio ritmo. Um deploy do web não depende do pipeline
+  do backend, e vice-versa.
+- **CI, runtime e permissões próprios:** quem trabalha no web não precisa de acesso ao código e às credenciais do
+  servidor. A versão de Node e as ferramentas do web não ficam presas às do backend.
+- **Releases legíveis:** cada repositório tem seu histórico; o changelog do web não se mistura com o do servidor.
+- **O web vira mais um consumidor**, igual ao mobile: mesma regra de contrato, mesmos testes de compatibilidade.
+
+Mas a separação só funciona com três peças que esta referência demonstra:
+
+1. **contrato versionado com dono:** o backend publica o OpenAPI com versão e hash;
+2. **SDK produzido pelo produtor**, ou gerado de forma determinística a partir de um contrato fixado, com CI que falha
+   quando o código gerado diverge do contrato;
+3. **adaptador React separado do núcleo:** query keys, hooks e política de cache moram no consumidor; tipos e
+   transporte moram no SDK.
+
+O OpenAPI sozinho não organiza versão, semântica de erro, autenticação nem cache. Isso é contrato humano, registrado em
+documentação e em testes. Ferramentas que geram código ou automatizam handoffs aceleram o trabalho, mas não substituem
+o controle explícito de versões do contrato.
+
 ## Recomendação (sem decidir)
 
 - **O contrato fica com o backend.** O OpenAPI é a fonte. O SDK é gerado do lado produtor e versionado, e os testes de
   compatibilidade das rotas usadas por versões publicadas dos clientes moram junto.
 - **Onde fica o app web:**
-  - M1, se a equipe do web tiver acesso ao backend e o CI com filtro por caminho for criado antes;
-  - M3, se o acesso precisar ser separado.
+  - M3 (separado) se a prioridade for independência de ciclo, de CI e de acesso; pede antes o pipeline de contrato e de
+    SDK descrito acima;
+  - M1 (dentro do monorepo) se a prioridade for começar rápido e a equipe do web já tiver acesso ao backend; pede antes
+    o CI com filtro por caminho e a regra de fronteira.
 - **Esforço:** M1 é o menor para começar; M3 é o maior e o mais estável no longo prazo.
 - Em qualquer opção, as camadas desta referência (`sdk-core`, `sdk-react`, `features/`) são as mesmas. Muda só
   onde o pacote do SDK é produzido.
+- O workspace leve deste repositório é só o exemplo: juntar `apps/web` e os pacotes do SDK aqui **não** equivale a
+  colocar o frontend dentro do backend de produção.
