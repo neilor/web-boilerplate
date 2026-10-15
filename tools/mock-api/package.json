@@ -1,0 +1,19 @@
+{
+  "name": "@web-boilerplate/mock-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Local mock of the synthetic catalog contract. In-memory, no credentials, no network calls.",
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": "./src/handler.ts"
+  },
+  "scripts": {
+    "start": "tsx src/main.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@web-boilerplate/sdk-core": "0.1.0"
+  }
+}

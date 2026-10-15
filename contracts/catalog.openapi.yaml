@@ -1,0 +1,224 @@
+openapi: 3.1.0
+info:
+  title: Catalog API (synthetic)
+  version: 1.0.0
+  description: |
+    Synthetic, generic contract used only to demonstrate the OpenAPI -> SDK -> React pipeline.
+    It does not describe any real product.
+servers:
+  - url: http://127.0.0.1:4010
+    description: Local mock server
+tags:
+  - name: Items
+  - name: Categories
+  - name: Viewer
+paths:
+  /items:
+    get:
+      tags: [Items]
+      operationId: listItems
+      summary: List catalog items
+      parameters:
+        - name: q
+          in: query
+          schema: { type: string, maxLength: 100 }
+        - name: category
+          in: query
+          schema: { type: string }
+        - name: status
+          in: query
+          schema: { $ref: '#/components/schemas/ItemStatus' }
+        - name: cursor
+          in: query
+          schema: { type: string }
+        - name: limit
+          in: query
+          schema: { type: integer, minimum: 1, maximum: 50, default: 20 }
+      responses:
+        '200':
+          description: A page of items.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/ItemPage' }
+        '400': { $ref: '#/components/responses/Error' }
+    post:
+      tags: [Items]
+      operationId: createItem
+      summary: Create an item
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ItemInput' }
+      responses:
+        '201':
+          description: Created.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Item' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+  /items/{itemId}:
+    parameters:
+      - name: itemId
+        in: path
+        required: true
+        schema: { type: string }
+    get:
+      tags: [Items]
+      operationId: getItem
+      summary: Get one item
+      responses:
+        '200':
+          description: The item.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Item' }
+        '404': { $ref: '#/components/responses/Error' }
+    patch:
+      tags: [Items]
+      operationId: updateItem
+      summary: Update an item
+      security:
+        - bearerAuth: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: { $ref: '#/components/schemas/ItemPatch' }
+      responses:
+        '200':
+          description: Updated.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Item' }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+        '409': { $ref: '#/components/responses/Error' }
+  /categories:
+    get:
+      tags: [Categories]
+      operationId: listCategories
+      summary: List categories
+      responses:
+        '200':
+          description: All categories.
+          content:
+            application/json:
+              schema:
+                type: array
+                items: { $ref: '#/components/schemas/Category' }
+  /me:
+    get:
+      tags: [Viewer]
+      operationId: getViewer
+      summary: The signed-in viewer
+      security:
+        - bearerAuth: []
+      responses:
+        '200':
+          description: The viewer.
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/Viewer' }
+        '401': { $ref: '#/components/responses/Error' }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  responses:
+    Error:
+      description: Error.
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/ApiError' }
+  schemas:
+    ItemStatus:
+      type: string
+      enum: [draft, published, archived]
+    Category:
+      type: object
+      required: [id, name]
+      properties:
+        id: { type: string }
+        name: { type: string }
+    ItemSummary:
+      type: object
+      required: [id, name, category, status, updatedAt]
+      properties:
+        id: { type: string }
+        name: { type: string }
+        category: { type: string }
+        status: { $ref: '#/components/schemas/ItemStatus' }
+        updatedAt: { type: string, format: date-time }
+    Item:
+      allOf:
+        - $ref: '#/components/schemas/ItemSummary'
+        - type: object
+          required: [description, tags, createdAt]
+          properties:
+            description: { type: string }
+            tags:
+              type: array
+              items: { type: string }
+            createdAt: { type: string, format: date-time }
+    ItemPage:
+      type: object
+      required: [items, nextCursor]
+      properties:
+        items:
+          type: array
+          items: { $ref: '#/components/schemas/ItemSummary' }
+        nextCursor:
+          type: [string, 'null']
+    ItemInput:
+      type: object
+      additionalProperties: false
+      required: [name, category]
+      properties:
+        name: { type: string, minLength: 2, maxLength: 80 }
+        category: { type: string }
+        description: { type: string, maxLength: 2000 }
+        tags:
+          type: array
+          maxItems: 10
+          items: { type: string, maxLength: 30 }
+    ItemPatch:
+      type: object
+      additionalProperties: false
+      properties:
+        name: { type: string, minLength: 2, maxLength: 80 }
+        description: { type: string, maxLength: 2000 }
+        status: { $ref: '#/components/schemas/ItemStatus' }
+        tags:
+          type: array
+          maxItems: 10
+          items: { type: string, maxLength: 30 }
+    Viewer:
+      type: object
+      required: [id, displayName, roles]
+      properties:
+        id: { type: string }
+        displayName: { type: string }
+        roles:
+          type: array
+          items: { type: string, enum: [viewer, editor] }
+    ApiError:
+      type: object
+      required: [code, message]
+      properties:
+        code: { type: string }
+        message: { type: string }
+        requestId: { type: string }
+        fieldErrors:
+          type: object
+          additionalProperties:
+            type: array
+            items: { type: string }
